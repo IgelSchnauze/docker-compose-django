@@ -2,5 +2,5 @@ from django.shortcuts import render
 from simple_django.settings import DATABASES
 
 def checkhost(request):
-    hostname = f'{DATABASES["default"]["HOST"]}' + "web1"
+    hostname = f'host: {DATABASES["default"]["HOST"]}'
     return render(request, 'checkhost.html', context = {'host': hostname},)

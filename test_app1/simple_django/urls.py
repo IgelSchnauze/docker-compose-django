@@ -19,5 +19,6 @@ from just_one_view1 import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('web1', views.checkhost, name='checkhost')
+    path('web1', views.checkhost, name='checkhost'),
+    path('web2', views.checkhost, name='checkhost')
 ]

@@ -7,7 +7,7 @@ services:
         volumes:
           - ./test_app1/:/usr/src/app/
         env_file:
-          - ./test_app1/.env.dev
+          - ./test_app1/web1.env
         depends_on:
         - db1
         networks:
@@ -25,12 +25,12 @@ services:
         networks:
         - localnet1
     web2: 
-        build: ./test_app2
+        build: ./test_app1
         command: python3 manage.py runserver 0.0.0.0:8001
         volumes:
-          - ./test_app2/:/usr/src/app/
+          - ./test_app1/:/usr/src/app/
         env_file:
-          - ./test_app2/.env.dev
+          - ./test_app1/web2.env
         depends_on:
         - db2
         networks:
